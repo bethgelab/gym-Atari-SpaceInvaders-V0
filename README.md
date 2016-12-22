@@ -6,16 +6,15 @@ The instruction is only for Ubuntu.
 Install prerequisites:
 
 `sudo apt-get install libhdf5-dev libyaml-dev libopencv-dev pkg-config`
-
 `sudo apt-get install python python-dev python-pip python-virtualenv`
 
 Check out and compile the code:
 
 `git clone https://github.com/NervanaSystems/neon.git`
 
-cd neon
+`cd neon`
 
-make
+`make`
 
 pip install gym
 
