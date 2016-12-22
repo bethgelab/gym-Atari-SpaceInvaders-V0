@@ -5,25 +5,27 @@ The instruction is only for Ubuntu.
 ### Neon
 Install prerequisites:
 
-`sudo apt-get install libhdf5-dev libyaml-dev libopencv-dev pkg-config`
-
-`sudo apt-get install python python-dev python-pip python-virtualenv`
+```
+sudo apt-get install libhdf5-dev libyaml-dev libopencv-dev pkg-config`
+sudo apt-get install python python-dev python-pip python-virtualenv
+```
 
 Check out and compile the code:
 
-`git clone https://github.com/NervanaSystems/neon.git`
-
-`cd neon`
-
-`make`
+```
+git clone https://github.com/NervanaSystems/neon.git
+cd neon
+make
+```
 
 ### OpenAI Gym
 
 Install OpenAI Gym:
 
-`pip install gym
+```
+pip install gym
 pip install gym[atari]
-`
+```
 
 ### Simple DQN
 
@@ -33,13 +35,11 @@ Prerequisities:
 
 To install openCV
 
-`sudo apt-get install python-opencv`
-
-`ln -s /usr/lib/python2.7/dist-packages/cv2.so NEON_HOME/.venv/lib/python2.7/site-packages/`
-
+```
+sudo apt-get install python-opencv
+ln -s /usr/lib/python2.7/dist-packages/cv2.so NEON_HOME/.venv/lib/python2.7/site-packages/
 In case it doen't work try following,
 
-```
 echo "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse" >> /etc/apt/sources.list
 apt-get update
 
