@@ -44,25 +44,49 @@ echo "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe mult
 apt-get update
 
 apt-get -y install libopencv-dev build-essential cmake git libgtk2.0-dev pkg-config python-dev python-numpy libdc1394-22 libdc1394-22-dev libjpeg-dev libpng12-dev libtiff4-dev libjasper-dev libavcodec-dev libavformat-dev libswscale-dev libxine-dev libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev libv4l-dev libtbb-dev libqt4-dev libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopencore-amrwb-dev libtheora-dev libvorbis-dev libxvidcore-dev x264 v4l-utils unzip
-```
 
 cd /tmp
 git clone https://github.com/opencv/opencv.git
 cd opencv
 mkdir build
 cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D WITH_V4L=ON -D WITH_QT=ON -D WITH_OPENGL=ON ..
+cmake -D CMAKE_BUILD_TYPE=RELEASE\
+-D CMAKE_INSTALL_PREFIX=/usr/local\
+-D WITH_TBB=ON \ 
+-D WITH_V4L=ON \
+-D WITH_QT=ON \
+-D WITH_OPENGL=ON ..
+
 make -j $(nproc)
 make install
 
+/bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'
+ldconfig
+
+ln /dev/null /dev/raw1394
+
+cd /
+rm -rf /tmp/opencv
+```
+
+Then just check out the code:
+
+```
 git clone https://github.com/tambetm/simple_dqn
-
 cd simple_dqn
+```
+### Optional
 
-pip install matplotlib
+For plotting install `matplotlib`:
 
-sudo apt-get install libav-tools
+`pip install matplotlib`
 
+For producing game videos install `avconv`:
+
+`sudo apt-get install libav-tools`
+
+##### Running the code
+### Training 
 To run training for Breakout:
 
-./train.sh roms/breakout.bin
+./train.sh SpaceInvaders-V0 --environment gym
