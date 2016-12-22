@@ -85,8 +85,12 @@ For producing game videos install `avconv`:
 
 `sudo apt-get install libav-tools`
 
-##### Running the code
+## Running the code
 ### Training 
 To run training for Breakout:
 
-./train.sh SpaceInvaders-V0 --environment gym
+`./train.sh SpaceInvaders-V0 --environment gym`
+
+For training, testing and saving the results in a csv file 
+
+`python main.py game SpaceInvaders-V0 --environment "gym" --backend 'cpu' --random_steps 500 --train_steps 1000 --test_steps 500 --csv_file 'SpaceInvaders-V0.csv' `
