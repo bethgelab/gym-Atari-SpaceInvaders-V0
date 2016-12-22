@@ -6,6 +6,7 @@ The instruction is only for Ubuntu.
 Install prerequisites:
 
 `sudo apt-get install libhdf5-dev libyaml-dev libopencv-dev pkg-config`
+
 `sudo apt-get install python python-dev python-pip python-virtualenv`
 
 Check out and compile the code:
@@ -16,9 +17,13 @@ Check out and compile the code:
 
 `make`
 
-pip install gym
+### OpenAI Gym
 
-pip install gym[atari]
+Install OpenAI Gym:
+
+`pip install gym`
+
+`pip install gym[atari]`
 
 pip install numpy argparse logging
 
