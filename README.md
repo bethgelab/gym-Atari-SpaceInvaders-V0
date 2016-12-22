@@ -9,15 +9,26 @@ Install prerequisites:
 
 `sudo apt-get install python python-dev python-pip python-virtualenv`
 
-git clone https://github.com/NervanaSystems/neon.git
+Check out and compile the code:
+
+`git clone https://github.com/NervanaSystems/neon.git`
+
 cd neon
+
 make
+
 pip install gym
+
 pip install gym[atari]
+
 pip install numpy argparse logging
+
 git clone https://github.com/tambetm/simple_dqn
+
 cd simple_dqn
+
 pip install matplotlib
+
 sudo apt-get install libav-tools
 
 To run training for Breakout:
