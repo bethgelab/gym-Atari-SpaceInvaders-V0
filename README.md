@@ -90,11 +90,18 @@ For producing game videos install `avconv`:
 
 ### To save video files
 
-Replace `simple_dqn/agent.py` in the current code with `agent.py` in the current repository.
+Replace `simple_dqn/agent.py` in the current code with `agent.py` in the current repository. Update (the location where the video files will be saved) line `138`
 
 ## Running the code
 ### For training, testing and saving the results in a csv file 
 
 `python main.py game SpaceInvaders-V0 --environment "gym" --backend 'cpu' --random_steps 500 --train_steps 1000 --test_steps 500 --csv_file 'SpaceInvaders-V0.csv' `
 
+## Note :
+Some trivial issues may arise due to different python versions. This is compatible for Python2. If you want to run it using python3, you  have to change the `xrange` to `range` and `sys.maxint` to `sys.maxsize`
 
+### Some useful links :
+
+1. https://github.com/tambetm/simple_dqn/tree/646154a147872e653873244fd43bc04490d99457
+2. https://gym.openai.com/evaluations/eval_Eduozx4HRyqgTCVk9ltw
+3. https://github.com/ppwwyyxx/tensorpack/tree/master/examples/OpenAIGym
