@@ -6,7 +6,7 @@ The instruction is only for Ubuntu.
 Install prerequisites:
 
 ```
-sudo apt-get install libhdf5-dev libyaml-dev libopencv-dev pkg-config`
+sudo apt-get install libhdf5-dev libyaml-dev libopencv-dev pkg-config
 sudo apt-get install python python-dev python-pip python-virtualenv
 ```
 
@@ -17,6 +17,9 @@ git clone https://github.com/NervanaSystems/neon.git
 cd neon
 make
 ```
+Set Python PATH to `NEON_HOME`. `NEON_HOME` is the path where neon is installed,
+
+`export PYTHONPATH = NEON_HOME`
 
 ### OpenAI Gym
 
@@ -85,12 +88,13 @@ For producing game videos install `avconv`:
 
 `sudo apt-get install libav-tools`
 
+### To save video files
+
+Replace `simple_dqn/agent.py` in the current code with `agent.py` in the current repository.
+
 ## Running the code
-### Training 
-To run training for Breakout:
-
-`./train.sh SpaceInvaders-V0 --environment gym`
-
-For training, testing and saving the results in a csv file 
+### For training, testing and saving the results in a csv file 
 
 `python main.py game SpaceInvaders-V0 --environment "gym" --backend 'cpu' --random_steps 500 --train_steps 1000 --test_steps 500 --csv_file 'SpaceInvaders-V0.csv' `
+
+
